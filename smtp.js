@@ -40,18 +40,4 @@ const Email = {
 };
 
 const sendEmail = () =>{
-    Email.send({
-        // TODO: gegevens in .env file zetten
-        Host: "smtp.office365.com",
-        Username: "loreverh3@student.arteveldehs.be",
-        Password: "HupHollandHup1212!",
-        To: "lorenzoverheecke@gmail.com",
-        From: "lorenzoverheecke@gmail.com",
-        Subject: "WOT - Contact",
-        Body: "test 123",
-    })
-        .then(function (message) {
-            alert("mail sent successfully");
-            console.log("It worked");
-        });
 }
