@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nablijven!</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Welcome to Nablijven! An escape room created by a group of students of Artevelde University of Applied Sciences.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./fa/all.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="nav-title">
+                Nablijven!
+            </h1>
+            <ul>
+                <li>
+                    <a href="#nablijven">
+                        Nablijven
+                    </a>
+                </li>
+                <li>
+                    <a href="#team">
+                        Team
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="c-intro__content">
+            <h1>Nablijven!</h1>
+            <p>Ready to escape?</p>
+        </div>
+    </header>
+    <section id="nablijven" class="u-container">
+        <h2 class="c-title">
+            The escape room
+        </h2>
+        <div class="u-flex">
+        <p class="c-description">
+            Four last year students of the Artevelde University of Applied Sciences messed up again. For the umpteenth time, they were late for school. This only means one thing: DETENTION! As the teacher leaves the detention room for an important meating with the school board, you and the others are planning to escape the detention room. You have 30 minutes to escape. <br/><span class="t-pink">Are you ready to escape?</span>
+        </p>
+        <div class="c-carousel" id="carousel">
+
+        </div>
+        </div>
+        
+        
+    </section>
+    <hr>
+    <section id="team" class="u-container">
+        <h2 class="c-title">
+            Meet the team behind <span class="t-pink">Nablijven!</span>
+        </h2>
+        <div id="teammembers">
+
+        </div>
+    </section>
+    <hr>
+    <section id="credits" class="u-container">
+        <h2 class="c-title">
+            Special thanks to...
+        </h2>
+        <div id="honor">
+            
+        </div>
+    </section>
+    <hr>
+    <section id="contact" class="u-container">
+        <h2 class="c-title">
+            Contact
+        </h2>
+        <p>Have any questions? Eager to find out more? Feel free to contact us!</p>
+        <form action="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send" onClick="sendMail()">
+        </form>
+    </section>
+    <footer>
+        Copyright © 2023 Arteveldehogeschool. All rights reserved.
+    </footer>
+    <button id="toTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="./index.js"></script>
+    <script src="./smtp.js"></script>
+</body>
+</html>
