@@ -1,4 +1,8 @@
 /* SmtpJS.com - v3.0.0 */
+import 'dotenv';
+
+const mailButton = document.getElementById('btnMail');
+
 const Email = {
   send: function (a) {
     return new Promise(function (n, e) {
@@ -39,7 +43,10 @@ const Email = {
   },
 };
 
-const sendEmail = () =>{
+const email = process.env.EMAIL;
+const password = process.env.PASSWORD;
+
+const sendMmail = () =>{
     Email.send({
         // TODO: gegevens in .env file zetten
         Host: "smtp.office365.com",
@@ -55,3 +62,5 @@ const sendEmail = () =>{
             console.log("It worked");
         });
 }
+
+btnMail.addEventListener("click", sendMmail);

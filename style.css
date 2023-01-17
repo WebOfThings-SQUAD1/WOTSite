@@ -14,7 +14,7 @@ html,body{
     width:100%;
     background-color:var(--primary-white);
     color:var(--primary-gray);
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size:12px;
     line-height:1.5em;
 }
@@ -22,7 +22,7 @@ html,body{
 header{
     position:relative;
     height: 100vh;
-    background: url('./assets/LorenzoLilBro.png') no-repeat center center/cover;
+    background: url('./assets/images/LorenzoLilBro.png') no-repeat center center/cover;
 }
 
 nav{
@@ -42,12 +42,16 @@ ul{
 }
 
 a{
-    font-size: 1.5rem;
     text-decoration: none;
+}
+
+li a{
+    font-size: 1.5rem;
     color:var(--primary-white);
 }
 
 li{
+    font-weight: 600;
     display:flex;
     align-items:center;
 }
@@ -76,9 +80,15 @@ hr{
     margin:0;
 }
 
+h3{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
 .c-title{
+    margin-top: 0;
+    line-height: normal;
     font-size: 3rem;
-    margin-bottom: 8rem;
 }
 
 /*
@@ -94,6 +104,7 @@ TO TOP BUTTON
     right: 20px;
     background-color: var(--pink);
     display: none;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 }
 
 #toTop i{
@@ -111,6 +122,26 @@ NAVBAR
 
 .nav-title{
     color: var(--pink);
+}
+
+.c-hamburger{
+    display:none
+}
+
+.c-mobile__nav{
+    display: none;
+    z-index: 3;
+}
+
+.c-mobile__nav ul{
+    padding: 4rem 0;
+    display:flex;
+    flex-direction: column;
+    gap:3.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-gray);
+    border-top: var(--pink) 2px solid;
 }
 
 
@@ -153,11 +184,18 @@ UTILS
     gap: 4rem;
 }
 
+.u-clicked{
+    content: "\f00d";
+}
+
 .u-container{
     max-width: 80%;
     margin: 0 auto;
 }
 
+.u-active{
+    display:block;
+}
 
 /*
 TEXT
@@ -172,6 +210,7 @@ THE ESCAPE ROOM
 
 .c-description{
     font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 4rem;
     line-height: 4rem;
 }
@@ -191,6 +230,7 @@ TEAM
 }
 
 .team-member{
+    width: 15rem;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -225,8 +265,14 @@ CREDITS
 CONTACT
 */
 
+.c-contact__description{
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    line-height: 2rem;
+}
+
 form{
-    width:40%;
+    width:60%;
     display:flex;
     flex-direction: column;
 }
@@ -237,6 +283,8 @@ label {
 }
 
 input {
+    border: 2px solid var(--primary-gray);
+    outline: none;
     height: 3rem;
     font-size: 1.5rem;
     margin-bottom: 2rem !important;
@@ -246,10 +294,15 @@ input {
 
 input:focus {
     outline: none;
-    border: 1px solid var(--pink);
+    border: 2px solid var(--pink);
 }
 
 textarea {
+    border: 2px solid var(--primary-gray);
+    outline: none;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 40rem;
     height: 10rem;
     font-size: 1.5rem;
     margin-bottom: 2rem !important;
@@ -259,20 +312,43 @@ textarea {
 
 textarea:focus {
     outline: none;
-    border: 1px solid var(--pink);
+    border: 2px solid var(--pink);
 }
 
 input[type="submit"] {
     background-color: var(--pink);
     color: var(--primary-white);
     border: none;
+    height: auto;
+    font-weight: 700;
     font-size: 1.5rem;
+    line-height: 2.5rem;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    width: 20%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 30%;
+}
+
+
+/*
+MEDIA QUERIES
+*/
+
+@media screen and (max-width:860px){
+    nav ul{
+        display:none;
+    }
+    .c-hamburger{
+        display:flex;
+        align-items:center;
+    }
+    .c-hamburger i{
+        color:var(--primary-white);
+    }
+    .c-hamburger i:hover{
+        cursor: pointer;
+    }
+    form{
+        width:100%;
+    }
 }

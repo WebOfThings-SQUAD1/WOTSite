@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nablijven!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
@@ -21,13 +24,16 @@
 <body>
     <header>
         <nav>
-            <h1 class="nav-title">
-                Nablijven!
-            </h1>
+            <a href="./">
+                <h1 class="nav-title">
+                    Nablijven!
+                </h1>
+            </a>
+            
             <ul>
                 <li>
-                    <a href="#nablijven">
-                        Nablijven
+                    <a href="#story">
+                        Story
                     </a>
                 </li>
                 <li>
@@ -36,18 +42,50 @@
                     </a>
                 </li>
                 <li>
+                    <a href="#credits">
+                        Credits
+                    </a>
+                </li>
+                <li>
                     <a href="#contact">
                         Contact
                     </a>
                 </li>
             </ul>
+            <div class="c-hamburger" onclick="mobileNav()">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
+        <div class="c-mobile__nav">
+            <ul>
+                <li>
+                    <a href="#story">
+                        Story
+                    </a>
+                </li>
+                <li>
+                    <a href="#team">
+                        Team
+                    </a>
+                </li>
+                <li>
+                    <a href="#credits">
+                        Credits
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div class="c-intro__content">
             <h1>Nablijven!</h1>
             <p>Ready to escape?</p>
         </div>
     </header>
-    <section id="nablijven" class="u-container">
+    <section id="story" class="u-container">
         <h2 class="c-title">
             The escape room
         </h2>
@@ -85,15 +123,16 @@
         <h2 class="c-title">
             Contact
         </h2>
-        <p>Have any questions? Eager to find out more? Feel free to contact us!</p>
-        <form action="post">
+        <p class="c-contact__description">Have any questions? Eager to find out more? Feel free to contact us!</p>
+        <form action="https://formspree.io/f/mqkoapjq"
+        method="POST">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
             <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            <input type="submit" value="Send" onClick="sendMail()">
+            <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+            <input type="submit" id="btnMail" value="Send" onClick="sendMail()">
         </form>
     </section>
     <footer>
@@ -102,7 +141,7 @@
     <button id="toTop">
         <i class="fas fa-arrow-up"></i>
     </button>
-    <script src="./index.js"></script>
-    <script src="./smtp.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./smtp.js"></script>
 </body>
 </html>

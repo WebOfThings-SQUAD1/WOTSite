@@ -1,6 +1,12 @@
 const toTopButton = document.getElementById("toTop");
 const teamMembersContainer = document.getElementById("teammembers");
 const honor = document.getElementById('honor');
+const hamburger = document.querySelector(".c-hamburger");
+const mobileNav = document.querySelector(".c-mobile__nav");
+const hamburgerIcon = document.createElement('i');
+hamburgerIcon.classList.add('fas', 'fa-bars');
+const closeIcon = document.createElement('i');
+closeIcon.classList.add('fas', 'fa-times');
 
 const scrollFunction = () =>{
     if (
@@ -16,6 +22,11 @@ const scrollFunction = () =>{
 const backToTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+const toggleMenu = () =>{
+    mobileNav.classList.toggle("u-active");
+    hamburger.classList.toggle("u-clicked");
 }
 
 const teamMembers = [
@@ -100,11 +111,11 @@ const loadTeamMembers = () => {
         // image
         const image = document.createElement("img");
         image.classList.add("team-member__image")
-        image.src = `./assets/${member.img}`;
+        image.src = `./assets/images/people/${member.img}`;
         image.alt = `Beautiful portrait of ${member.name}`
     
         // name
-        const memberName = document.createElement("h2");
+        const memberName = document.createElement("h3");
         memberName.innerText = member.name;
     
         // iconsContainer
@@ -148,11 +159,11 @@ const loadHonorableMembers = () =>{
         // image
         const image = document.createElement("img");
         image.classList.add("team-member__image")
-        image.src = `./assets/${member.img}`;
+        image.src = `./assets/images/people/${member.img}`;
         image.alt = `Beautiful portrait of ${member.name}`
     
         // name
-        const memberName = document.createElement("h2");
+        const memberName = document.createElement("h3");
         memberName.innerText = member.name;
     
         // iconsContainer
@@ -179,10 +190,11 @@ const loadHonorableMembers = () =>{
 window.addEventListener('load',()=>{
     loadTeamMembers();
     loadHonorableMembers();
+    hamburger.addEventListener("click", toggleMenu);
+    toTopButton.addEventListener("click", backToTop);
 })
 
 window.onscroll = function () {
     scrollFunction();
 };
 
-toTopButton.addEventListener("click", backToTop);
