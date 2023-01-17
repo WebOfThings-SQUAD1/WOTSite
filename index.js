@@ -178,6 +178,7 @@ const loadHonorableMembers = () =>{
         // link to linkedin
         const memberLinkedIn = document.createElement("a");
         memberLinkedIn.href = member.linkedIn;
+        memberLinkedIn.target = "_blank";
         memberLinkedIn.append(linkedInIcon);
 
         iconsContainer.append(memberLinkedIn);
