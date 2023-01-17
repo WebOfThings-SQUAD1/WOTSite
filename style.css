@@ -134,6 +134,8 @@ NAVBAR
 }
 
 .c-mobile__nav ul{
+    z-index: 3;
+    position: sticky;
     padding: 4rem 0;
     display:flex;
     flex-direction: column;
